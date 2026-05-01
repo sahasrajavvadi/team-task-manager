@@ -1,0 +1,64 @@
+.task-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+
+.task-card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.task-card.my-task { border-left: 2px solid var(--accent); }
+.task-card.done { opacity: 0.65; }
+.task-card.done .task-card-title { text-decoration: line-through; color: var(--text-muted); }
+
+.task-priority-bar {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; opacity: 0.8;
+}
+
+.task-card-content { padding: 11px 12px; }
+
+.task-card-header { display: flex; align-items: flex-start; gap: 6px; margin-bottom: 8px; }
+.task-drag-handle {
+  color: var(--text-dim); flex-shrink: 0; margin-top: 1px;
+  opacity: 0; transition: opacity 0.15s; cursor: grab;
+}
+.task-card:hover .task-drag-handle { opacity: 1; }
+.task-drag-handle:active { cursor: grabbing; }
+
+.task-card-title {
+  font-size: 13px; font-weight: 600; line-height: 1.4;
+  color: var(--text); flex: 1;
+}
+
+.task-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+.task-tag {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.02em;
+  background: var(--bg-card); color: var(--text-muted);
+  padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border);
+}
+
+.task-card-footer {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+}
+.task-card-left { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.task-card-right { display: flex; align-items: center; gap: 5px; }
+
+.due-date {
+  display: flex; align-items: center; gap: 3px;
+  font-size: 10px; color: var(--text-muted); font-variant-numeric: tabular-nums;
+}
+.due-date.overdue { color: var(--red); }
+.due-date.today { color: var(--yellow); }
+
+.comment-count {
+  display: flex; align-items: center; gap: 3px;
+  font-size: 10px; color: var(--text-dim);
+}

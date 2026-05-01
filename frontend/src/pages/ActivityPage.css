@@ -1,0 +1,34 @@
+.activity-page { padding: 32px; max-width: 900px; }
+
+.activity-feed { display: flex; flex-direction: column; gap: 4px; }
+
+.activity-entry {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+.activity-entry:hover { border-color: var(--border-light); background: var(--bg-elevated); }
+
+.activity-icon-wrap {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.activity-body { flex: 1; min-width: 0; }
+.activity-main { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; font-size: 14px; margin-bottom: 4px; }
+.act-user { font-weight: 700; }
+.act-verb { color: var(--text-muted); font-size: 13px; }
+.act-target { font-weight: 600; color: var(--text); font-size: 13px; }
+
+.activity-meta { display: flex; align-items: center; gap: 8px; }
+.act-project { font-size: 11px; font-weight: 600; }
+
+.act-time { font-size: 11px; color: var(--text-dim); flex-shrink: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+@media (max-width: 600px) {
+  .activity-page { padding: 20px; }
+  .act-time { display: none; }
+}
